@@ -1,0 +1,67 @@
+body{
+  background: linear-gradient(to bottom right, #a0eacb, #4ac488);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30em;
+}
+
+#main{
+  display: flex;
+  gap: 10em;
+  background: linear-gradient(to bottom right, #e6fff5, #c8facc);
+  border-radius: 2em;
+  padding: 5em;
+  width: 60%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  margin-top: 7.5em;
+}
+
+#number{
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #2e7d32;
+  margin: 2em 0;
+}
+
+#check{
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  color: wheat;
+  border: none;
+  padding: 0.8em 2em;
+  font-size: 1em;
+  border-radius: 2em;
+  cursor: pointer;
+  margin-bottom: 1em;
+  transition: 0.3s ease;
+}
+
+#check:hover{
+  opacity: 0.8;
+}
+
+
+#right{
+  background: white;
+  padding: 6em;
+  width: 30%;
+  border-radius: 1em;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.452);
+}
+
+#right h2{
+  font-size: 2em;
+  margin: 1em;
+  color: #1b5e20;
+}
+
+#addList{
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  color: white;
+  border: none;
+  padding: 0.6em 1.5em;
+  font-size: 0.9em;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 1em;
+}
