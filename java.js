@@ -4,10 +4,25 @@ const goalList = document.getElementById('goalList');
 const addListB = document.getElementById('addList');
 const UList = document.getElementById('list')
 
+const saveNumber = localStorage.getItem('balance');
+if(saveNumber){
+  number.textContent = `${Number(saveNumber).toLocaleString()} $`;
+}
+
 checkB.addEventListener('click', (e)=>{
-  e.preventDefault(); 
-  const random = Math.floor( Math.random() * 10000000) +1;
-  number.textContent = random;
+  e.preventDefault();
+  const checkBoxes = document.querySelectorAll('#list input[type = "checkbox"]') //select all  checkBoxs
+  const totalCheckBox = checkBoxes.length;
+  if(totalCheckBox === 0){
+    number.textContent = 0;
+    localStorage.setItem('balance', 0);
+    return;
+  }const checked = Array.from(checkBoxes).filter(cb => cb.checked).length;
+  const percent = checked / totalCheckBox;
+  const maxValue = 13042030;
+  const calculate = Math.floor(percent * maxValue);
+  number.textContent = `${calculate.toLocaleString()}  $`;
+  localStorage.setItem('balance', calculate);
 })
 
 let savedGoals = JSON.parse(localStorage.getItem('goals')) || [];
@@ -49,6 +64,12 @@ function displayGoal(goal) {
   // ✅ When checkbox is changed, update localStorage
   checkbox.addEventListener('change', () => {
     goal.done = checkbox.checked;
+    localStorage.setItem('goals', JSON.stringify(savedGoals));
+  });
+
+  label.addEventListener('click', () => {
+    li.remove();
+    savedGoals = savedGoals.filter(g => g.id !== goal.id);
     localStorage.setItem('goals', JSON.stringify(savedGoals));
   });
 

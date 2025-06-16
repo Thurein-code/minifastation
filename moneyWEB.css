@@ -1,5 +1,7 @@
 body{
-  background: linear-gradient(to bottom right, #a0eacb, #4ac488);
+  background: linear-gradient(140deg,#4ac488, #a0eacb);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +11,8 @@ body{
 #main{
   display: flex;
   gap: 10em;
-  background: linear-gradient(to bottom right, #e6fff5, #c8facc);
+  background-color: #c8facc;
+  background-image: linear-gradient(to bottom right, #e6fff5, #c8facc);
   border-radius: 2em;
   padding: 5em;
   width: 60%;
@@ -18,35 +21,37 @@ body{
 }
 
 #left h1{
+  position: absolute;
   margin-bottom: 0%;
+  margin-left: 1.2em;
 }
 
 #number{
-  position: absolute;
+  position: relative;
   font-size: 2.5em;
   font-weight: bold;
   color: #2e7d32;
-  margin-left: 0.65em;
-  margin-top:2em;
+  margin-top: 2em;
+  margin-left: 0.9em;
+  margin-bottom: -2em;
 }
 
 #list{
   border: none;
   border-radius: 0.5em;
-  position: absolute;
-  margin-top: 13em;
 }
+
 #check{
   background: linear-gradient(to right, #43cea2, #185a9d);
   color: wheat;
   position: absolute;
   border: none;
-  padding: 0.8em 2em;
+  padding: 1em 4em;
   font-size: 1em;
   border-radius: 2em;
   cursor: pointer;
-  margin-bottom: -7em;
-  margin-top: 9em;
+  margin-top: 6em;
+  margin-left: 0.8em;
   transition: 0.3s ease;
 }
 
@@ -55,12 +60,39 @@ body{
 }
 
 #left{
-  height: 15em;
+  position: relative;
+  height: 26em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
+#wrap{
+  margin-left: 2em;
+}
+
+#scroll{
+  height: 12em;
+  width: 20em;
+  overflow-y: auto;
+  background-color: rgba(48, 123, 167, 0.329);
+  margin-top: 7em;
+  border-radius: 1em; 
+}
+
+#list li{
+  margin-bottom: 0.7em;
+  font-size: 18px;
+}
+
+#scroll::-webkit-scrollbar{
+  display: none;
+}
+
+ul{
+  list-style-type: none;
+  margin-left: -1em;
+}
 
 #right{
   background: white;
