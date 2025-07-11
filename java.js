@@ -19,7 +19,7 @@ checkB.addEventListener('click', (e)=>{
     return;
   }const checked = Array.from(checkBoxes).filter(cb => cb.checked).length;
   const percent = checked / totalCheckBox;
-  const maxValue = 13042030;
+  const maxValue = 200000000;
   const calculate = Math.floor(percent * maxValue);
   number.textContent = `${calculate.toLocaleString()}  $`;
   localStorage.setItem('balance', calculate);
@@ -30,7 +30,7 @@ savedGoals.forEach(goal => {
   displayGoal(goal);
 });
 
-document.getElementById('right').addEventListener('submit', (e) => {
+document.getElementById('right').addEventListener('click', (e) => {
   e.preventDefault();
   text = goalList.value.trim()
   if (text === ''){
